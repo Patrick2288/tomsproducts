@@ -4,16 +4,16 @@
     </h3>
     <div class='card-body'>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Filter by:" aria-label="Filter by:" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Filter by:" aria-label="Filter by:" aria-describedby="basic-addon1" [(ngModel)]='listFilter'>
           </div>
-          <h5 class="card-text">Filtered by:</h5>
+          <h5 class="card-text">Filtered by: {{listFilter}}</h5>
         <div class='table-responsive'>
-            <table class='table' *NgIf='products && products.length'>
+            <table class='table' *ngIf='products && products.length'>
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
-                                Show Image
+                            <button class='btn btn-primary' (click) = 'toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
                         <th>Product</th>
@@ -24,12 +24,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                 <tr *NgFor='let product of products'>
-                     <td></td>
+                 <tr *ngFor='let product of filteredProducts'>
+                     <td>
+                        <img *ngIf='showImage' 
+                        [src]='product.imageUrl'
+                        [title]='product.productName'
+                        [style.width.px]='imageWidth'
+                        [style.margin.px]='imageMargin'>
+                    </td>
                      <td>{{product.productName}}</td>
                      <td>{{product.productCode}}</td>
                     <td>{{product.releaseDate}}</td>
-                    <td>{{product.price}}</td>
+                    <td>{{product.price | currency: 'EUR':true:'1.2-2'}}</td>
                     <td>{{product.starRating}}</td>
                  </tr>  
                 </tbody>
