@@ -8,8 +8,17 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { StarRatingComponent } from './shared/star-rating/star-rating.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { RouterModule, Routes} from '@angular/router';
+
 library.add(faStar);
 
+const routes: Routes = [
+  
+]
 
 @NgModule({
   declarations: [
@@ -21,7 +30,10 @@ library.add(faStar);
     BrowserModule,
     FormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
