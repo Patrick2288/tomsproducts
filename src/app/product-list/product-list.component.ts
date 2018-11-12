@@ -46,4 +46,7 @@ performFilter(filterBy: string): IProduct[]{
 toggleImage():void{
     this.showImage = !this.showImage;
 }
+deleteProduct(id:string): void {
+    this._productService.deleteProduct(id);
+}
 }
