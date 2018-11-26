@@ -1,0 +1,16 @@
+mat-card{
+    margin: 10px;
+    text-align: center;
+}
+
+mat-card-title{
+    text-align: center;
+}
+
+mat-card-actions{
+    align-self: flex-end;
+}
+
+.layout {
+    overflow-x: auto;
+}

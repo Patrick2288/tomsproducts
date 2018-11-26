@@ -18,6 +18,7 @@ export class AddProductComponent {
   starRating: number;
   imageUrl: string;
   showDisplayClipartComponent: boolean;
+  imageStr: string;
 
   listFilter: string;
   constructor(private _productService: ProductService, private router: Router) { }

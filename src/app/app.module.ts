@@ -68,6 +68,7 @@ const routes: Routes = [
     HttpClientModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireAuth,
     FlexLayoutModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),

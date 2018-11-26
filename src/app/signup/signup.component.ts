@@ -11,7 +11,7 @@ export class SignupComponent implements OnInit {
   email: string;
   pwd: string;
   name: string;
-  descritpion: string;
+  description: string;
 
   constructor(private auth: AuthService) { }
 
