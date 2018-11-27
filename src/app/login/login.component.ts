@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
   facebookLogin() {
     this.auth.doFacebookLogin()
     .then(res => { 
+      console.log("res: "+res);
       this.myRoute.navigate(['product-list']);
       }, err => {
         console.log(err);
